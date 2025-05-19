@@ -32,7 +32,7 @@ const Index = () => {
           <div className="lg:grid lg:grid-cols-2 lg:gap-8">
             <div>
               <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
-                About ZFP Inc
+                About ZFP 
               </h2>
               <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
                 Founded in 2010, ZFP Inc has been at the forefront of business innovation. 

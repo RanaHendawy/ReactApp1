@@ -4,11 +4,11 @@ import { RequestFormData } from '@/types/requestForm';
 interface Employee {
   id: number;
   name: string;
-  position: string;
+  jobTitle: string;
   department: string;
   branch?: string;
   initial?: string;
-  imageUrl: string;
+  image: string;
   email: string;
   extension?: string;
 }
@@ -123,7 +123,7 @@ export const generateEmployeesPDF = (employees: Employee[]) => {
     
     // Add employee details with truncation
     doc.text(truncate(employee.name, 28), 46, y + rowHeight/2 + 1, { align: 'left' });
-    doc.text(truncate(employee.position, 28), 76, y + rowHeight/2 + 1, { align: 'left' });
+    doc.text(truncate(employee.jobTitle, 28), 76, y + rowHeight/2 + 1, { align: 'left' });
     doc.text(truncate(employee.branch || 'Main Office', 23), 106, y + rowHeight/2 + 1, { align: 'left' });
     doc.text(truncate(employee.department, 28), 136, y + rowHeight/2 + 1, { align: 'left' });
     doc.text(employee.extension || '-', 175, y + rowHeight/2 + 1, { align: 'center' });

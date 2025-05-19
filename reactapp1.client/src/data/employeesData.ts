@@ -7,7 +7,7 @@ import axios from 'axios';
 export interface Employee {
     id: number;
     name: string;
-    jobtitle: string;
+    jobTitle: string;
     department: string;
     image: string;
     initial: string;

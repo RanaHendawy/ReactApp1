@@ -13,7 +13,9 @@ namespace ReactApp1.Server.Model
         public string Email { get; set; }
 
         public string Image { get; set; }
+        public string Branch { get; set; }
 
+        public string Initial { get; set; }
         public Employeelist()
         {
 

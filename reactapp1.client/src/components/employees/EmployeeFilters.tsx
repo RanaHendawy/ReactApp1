@@ -22,7 +22,9 @@ import {
 
 interface EmployeeFiltersProps {
   searchTerm: string;
-  setSearchTerm: (value: string) => void;
+    setSearchTerm: (value: string) => void;
+    positionFilter: string;
+    setPositionFilter: (jobTitle: string) => void;
   selectedDepartments: string[];
   setSelectedDepartments: (value: string[]) => void;
   branchFilter: string;
@@ -30,19 +32,23 @@ interface EmployeeFiltersProps {
   sortOrder: string;
   setSortOrder: (value: string) => void;
   departments: string[];
-  branches: string[];
+    branches: string[];
+    positions: string[];
   onExportPDF: () => void;
 }
 
 const EmployeeFilters = ({
   searchTerm,
-  setSearchTerm,
+    setSearchTerm,
+    positionFilter,
+    setPositionFilter,
   selectedDepartments,
   setSelectedDepartments,
   branchFilter,
   setBranchFilter,
   sortOrder,
-  setSortOrder,
+    setSortOrder,
+    positions,
   departments,
   branches,
   onExportPDF,
@@ -82,7 +88,9 @@ const EmployeeFilters = ({
               className="pl-10 w-full"
             />
           </div>
-        </div>
+              </div>
+
+           
 
         <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
           {/* Multi-select Department filter */}

@@ -99,18 +99,18 @@ const EmployeeModal = ({ employee, isOpen, onClose, onPrevious, onNext, hasPrevi
 
                 <div className="flex flex-col items-center py-4">
                             <Avatar className="h-32 w-32 mb-4">
-                              <AvatarImage src={employee.image} alt={employee.name} />
-                            {/*  <AvatarFallback>{employee.initial || employee.name.split(" ").map(n => n[0]).join("")}</AvatarFallback>*/}
+                        <AvatarImage src={"/lovable-uploads/" + employee.image} alt={employee.name} />
+                              <AvatarFallback>{employee.initial || employee.name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
                               </Avatar>
 
                     <h2 className="text-2xl font-bold mb-1">{employee.name}</h2>
-                    <p className="text-primary text-lg mb-1">{employee.image}</p>
-
+                    <p className="text-primary text-lg mb-1">{employee.jobTitle}</p>
+                    
                     <div className="w-full max-w-xs mt-4">
                         {employee.email && (
                             <div className="grid grid-cols-3 gap-2 mb-2">
                                 <span className="text-muted-foreground font-medium">Branch:</span>
-                                <span className="col-span-2">{employee.email}</span>
+                                <span className="col-span-2">{employee.branch}</span>
                             </div>
                         )}
 

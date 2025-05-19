@@ -23,6 +23,7 @@ const Employees = () => {
             })
             .then((data: Employee[]) => {
                 setEmployees(data);
+              //  console.log("Fetched employees:", data);
             })
             .catch(error => {
                 console.error("Error fetching employee data:", error);
@@ -39,11 +40,14 @@ const Employees = () => {
     branchFilter,
     setBranchFilter,
     sortOrder,
-    setSortOrder,
+      setSortOrder,
+      positions,
     departments,
     branches
   } = useEmployeeFiltering(employees);
-
+    const handleExportPDF = () => {
+        generateEmployeesPDF(filteredEmployees);
+    };
   // Fetch employees data when component mounts
   //useEffect(() => {
   //  const getEmployees = async () => {
@@ -64,9 +68,7 @@ const Employees = () => {
   //}, []);
   //rana
   // Handle PDF generation
-  const handleExportPDF = () => {
-  //  generateEmployeesPDF(filteredEmployees);
-  };
+    console.log("Filtered employees:", filteredEmployees);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -84,7 +86,8 @@ const Employees = () => {
         </div>
 
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-          {/* Filter and sorting controls */}
+                  {/* Filter and sorting controls */}
+                 
           <EmployeeFilters
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
@@ -94,12 +97,13 @@ const Employees = () => {
             setBranchFilter={setBranchFilter}
             sortOrder={sortOrder}
             setSortOrder={setSortOrder}
-            departments={departments}
+                      departments={departments}
+                      positions={positions}
             branches={branches}
             onExportPDF={handleExportPDF}
           />
 
-     
+                  <EmployeeList employees={filteredEmployees} />
         </div>
       </div>
       <div className="mt-auto">

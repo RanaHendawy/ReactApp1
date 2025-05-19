@@ -16,9 +16,9 @@ const Navbar = () => {
             <Link to="/" className="flex-shrink-0 flex flex-col items-center">
               <div className="flex items-center">
                 <img src="/lovable-uploads/904a7119-9e04-4130-bcd7-bb8320677b00.png" alt="ZFP Logo" className="w-8 h-8 mr-2" />
-                <span className="text-xl font-bold text-primary">ZFP Inc</span>
+                <span className="text-xl font-bold text-primary">ZFP </span>
               </div>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Digital Delivery - R&D Unit</span>
+                          <span style={{fontWeight:"Bold"}} className="text-xs text-gray-500 dark:text-gray-400">Digital Delivery - R&D Unit</span>
             </Link>
             <div className="hidden md:ml-10 md:flex md:space-x-8">
               <Link

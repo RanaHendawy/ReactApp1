@@ -4,10 +4,10 @@ import { Phone, Mail } from "lucide-react";
 
 interface EmployeeCardProps {
   name: string;
-  jobtitle: string;
+  position: string;
   department: string;
-  branch?: string;
-  initial?: string;
+  branch: string;
+  initial: string;
   image: string;
   email: string;
   extension?: string;
@@ -15,7 +15,7 @@ interface EmployeeCardProps {
 
 const EmployeeCard = ({ 
   name, 
-  jobtitle, 
+  position, 
   department, 
   branch, 
   initial, 
@@ -41,10 +41,11 @@ const EmployeeCard = ({
       <div className="flex flex-col items-center">
         <Avatar className="h-24 w-24 mb-4">
                   <AvatarImage src={"/lovable-uploads/" + image} alt={EmployeeCard.name} />
-          <AvatarFallback>{initial || name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
+
+          <AvatarFallback>{ name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
         </Avatar>
         <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50">{name}</h3>
-        <p className="text-primary mb-1">{jobtitle}</p>
+              <p className="text-primary mb-1">{position}</p>
         {branch && (
           <p className="text-gray-600 dark:text-gray-300 text-sm mb-1">{branch}</p>
         )}

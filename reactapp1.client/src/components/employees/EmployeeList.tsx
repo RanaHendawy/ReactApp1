@@ -16,17 +16,21 @@ const EmployeeList = ({ employees }: EmployeeListProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [viewMode, setViewMode] = useState<"card" | "list">("card");
+    const [activeDepartments, setActiveDepartments] = useState<string[]>([]);
+
+    const departments = Array.from(new Set(employees.map(emp => emp.department)));
+    // Handle opening employee modal
 
   // Handle opening employee modal
   const handleOpenEmployeeModal = (employee: Employee) => {
     // Only allow opening if no modal is currently open
-    if (!isModalOpen) {
+    //if (!isModalOpen) {
       setSelectedEmployee(employee);
       // Find the index of the selected employee
       const index = employees.findIndex(emp => emp.id === employee.id);
       setSelectedIndex(index);
       setIsModalOpen(true);
-    }
+   // }
   };
 
   // Navigate to previous employee
@@ -46,7 +50,9 @@ const EmployeeList = ({ employees }: EmployeeListProps) => {
       setSelectedEmployee(employees[nextIndex]);
     }
   };
-
+    const filteredEmployees = activeDepartments.length > 0
+        ? employees.filter(emp => activeDepartments.includes(emp.department))
+        : employees;
   return (
     <>
       {/* View toggle */}
@@ -88,10 +94,10 @@ const EmployeeList = ({ employees }: EmployeeListProps) => {
                 >
                   <EmployeeCard 
                     name={employee.name}
-                    jobtitle={employee.jobtitle}
+                    position={employee.jobTitle}
                     department={employee.department}
-                   // branch={employee.branch}
-                    //initial={employee.initial}
+                    branch={employee.branch}
+                    initial={employee.initial}
                     image={employee.image}
                     email={employee.email}
                     extension={employee.extension}

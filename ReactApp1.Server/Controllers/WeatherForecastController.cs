@@ -55,6 +55,8 @@ namespace ReactApp1.Server.Controllers
                 emp.Extension = item.Extension;
                 emp.Email = item.Email;
                 emp.Image = item.Image;
+                emp.Branch = item.Branch;
+                emp.Initial = item.Initial; 
                 //empList.Add(item.Name);
                 AllempList.Add(emp);
             }

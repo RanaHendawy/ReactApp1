@@ -1,4 +1,5 @@
 
+
 import * as XLSX from 'xlsx';
 import { Employee } from '@/data/employeesData';
 
@@ -23,18 +24,21 @@ export const parseExcelFile = (file: File): Promise<Employee[]> => {
         const employees: Employee[] = jsonData.map((row, index) => {
           return {
             id: row.id || index + 1,
-            name: row.name || '',
-            position: row.position || '',
+              name: row.name || '',
+              initial: row.initial || '',
+              branch: row.branch || '',
+            jobTitle: row.jobTitle || '',
             email: row.email || '',
             department: row.department || '',
-            imageUrl: row.imageUrl || 'https://via.placeholder.com/150',
+            image: row.image || 'https://via.placeholder.com/150',
             extension: row.extension?.toString() || ''
           };
         });
-        
+          console.log('Parsed Employees:', employees);
         resolve(employees);
       } catch (error) {
-        reject(new Error('Failed to parse Excel file'));
+          reject(new Error('Failed to parse Excel file'));
+          console.error('Error parsing Excel file:', error);
       }
     };
     
