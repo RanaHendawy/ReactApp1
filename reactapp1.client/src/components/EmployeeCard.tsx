@@ -40,7 +40,7 @@ const EmployeeCard = ({
     <div className="bg-card text-card-foreground p-6 rounded-lg shadow-md hover:bg-[hsl(var(--hover-color))] transition-all duration-300 hover:-translate-y-1 border border-border">
       <div className="flex flex-col items-center">
         <Avatar className="h-24 w-24 mb-4">
-                  <AvatarImage src={"/lovable-uploads/" + image} alt={EmployeeCard.name} />
+                  <AvatarImage src={"https://localhost:44339/upload/" + image} alt={EmployeeCard.name} />
 
           <AvatarFallback>{ name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
         </Avatar>

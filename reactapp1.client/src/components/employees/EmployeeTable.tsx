@@ -47,7 +47,7 @@ const EmployeeTable = ({ employees, onEmployeeClick, disabled = false }: Employe
             >
               <td className="px-6 py-4 font-medium flex items-center gap-3">
                 <Avatar className="h-8 w-8">
-                          <AvatarImage src={"/lovable-uploads/" + employee.image} alt={employee.name} />
+                          <AvatarImage src={"https://localhost:44339/upload/" + employee.image} alt={employee.name} />
                   <AvatarFallback>{employee.initial || employee.name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
                 </Avatar>
                 {employee.name}
@@ -63,7 +63,7 @@ const EmployeeTable = ({ employees, onEmployeeClick, disabled = false }: Employe
                   disabled={disabled}
                 >
                   <Mail className="w-4 h-4 mr-1" />
-                  <span>{employee.branch}</span>
+                  <span>{employee.email}</span>
                 </button>
               </td>
               <td className="px-6 py-4">

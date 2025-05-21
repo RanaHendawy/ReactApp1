@@ -8,6 +8,7 @@ namespace ReactApp1.Server.Model
         public Reactwebsite(DbContextOptions<Reactwebsite> options) : base(options) { }
 
         public DbSet<Employeelist> Employee { get; set; }
+        public DbSet<RDTeam> RDTeams { get; set; }
 
     }
 }

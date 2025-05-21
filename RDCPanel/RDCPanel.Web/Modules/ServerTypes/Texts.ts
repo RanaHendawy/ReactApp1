@@ -61,6 +61,36 @@ namespace texts {
                 export const Username: string;
             }
         }
+
+        namespace Employees {
+
+            namespace Employee {
+                export const Branch: string;
+                export const Department: string;
+                export const Email: string;
+                export const Extension: string;
+                export const Id: string;
+                export const Image: string;
+                export const Initial: string;
+                export const JobTitle: string;
+                export const Name: string;
+            }
+        }
+
+        namespace RDTeam {
+
+            namespace RdTeams {
+                export const Branch: string;
+                export const Department: string;
+                export const Email: string;
+                export const Extension: string;
+                export const Id: string;
+                export const Image: string;
+                export const Initial: string;
+                export const JobTitle: string;
+                export const Name: string;
+            }
+        }
     }
 
     export declare namespace Forms {
@@ -155,6 +185,12 @@ const Texts: typeof texts = proxyTexts({}, '', {
             User: {},
             UserPermission: {},
             UserRole: {}
+        },
+        Employees: {
+            Employee: {}
+        },
+        RDTeam: {
+            RdTeams: {}
         }
     },
     Forms: {

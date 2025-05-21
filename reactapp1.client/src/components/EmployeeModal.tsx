@@ -99,7 +99,7 @@ const EmployeeModal = ({ employee, isOpen, onClose, onPrevious, onNext, hasPrevi
 
                 <div className="flex flex-col items-center py-4">
                             <Avatar className="h-32 w-32 mb-4">
-                        <AvatarImage src={"/lovable-uploads/" + employee.image} alt={employee.name} />
+                        <AvatarImage src={"https://localhost:44339/upload/" + employee.image} alt={employee.name} />
                               <AvatarFallback>{employee.initial || employee.name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
                               </Avatar>
 

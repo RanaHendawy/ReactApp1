@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReactApp1.Server.Model;
 
@@ -10,9 +11,11 @@ using ReactApp1.Server.Model;
 namespace ReactApp1.Server.Migrations
 {
     [DbContext(typeof(Reactwebsite))]
-    partial class ReactwebsiteModelSnapshot : ModelSnapshot
+    [Migration("20250521084238_RDAddTeam")]
+    partial class RDAddTeam
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
